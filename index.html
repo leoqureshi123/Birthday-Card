@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Shagufta</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #fff0f5 0%, #ffe6ee 100%);
+            font-family: 'Montserrat', sans-serif;
+            overflow: hidden;
+        }
+
+        .card-container {
+            position: relative;
+            width: 800px;
+            height: 500px;
+            perspective: 1000px;
+        }
+
+        .card {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .card.flipped {
+            transform: rotateY(180deg);
+        }
+
+        .front, .back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            background: #fff;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .front {
+            justify-content: center;
+        }
+
+        .back {
+            transform: rotateY(180deg);
+            padding: 50px;
+        }
+
+        .heart-btn {
+            font-size: 60px;
+            color: #e91e63;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            filter: drop-shadow(0 2px 4px rgba(233,30,99,0.3));
+            margin-bottom: 30px;
+        }
+
+        .heart-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .front-content {
+            text-align: center;
+        }
+
+        .front-title {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3.5rem;
+            color: #e91e63;
+            margin-bottom: 20px;
+        }
+
+        .message-content {
+            height: 100%;
+            overflow-y: auto;
+            padding-right: 20px;
+            color: #4a4a4a;
+            line-height: 1.8;
+            font-size: 1.1rem;
+            text-align: justify;
+        }
+
+        .message-content h2 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2.5rem;
+            color: #e91e63;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .decorative-border {
+            position: absolute;
+            width: 90%;
+            height: 90%;
+            border: 2px solid #ffb6c1;
+            border-radius: 15px;
+            pointer-events: none;
+        }
+
+        .rose-decoration {
+            position: absolute;
+            opacity: 0.1;
+            width: 150px;
+            height: auto;
+        }
+
+        .rose-left {
+            left: -50px;
+            top: -50px;
+            transform: rotate(-30deg);
+        }
+
+        .rose-right {
+            right: -50px;
+            bottom: -50px;
+            transform: rotate(30deg);
+        }
+
+        /* Scrollbar Styling */
+        .message-content::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .message-content::-webkit-scrollbar-track {
+            background: #ffe6ee;
+        }
+
+        .message-content::-webkit-scrollbar-thumb {
+            background: #e91e63;
+            border-radius: 3px;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .back .heart-btn {
+            color: black; /* Change color to black */
+            font-size: 30px; /* Smaller size of the heart */
+            position: absolute; /* Positioning */
+            bottom: 20px; /* Position from the bottom */
+            left: 20px; /* Position from the left */
+            animation: float 2s ease-in-out infinite; /* Floating animation */
+            cursor: pointer; /* Pointer cursor on hover */
+        }
+
+        .back .heart-btn:hover {
+            color: #e91e63; /* Change color on hover */
+            transform: scale(1.1); /* Scale effect on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="card-container">
+        <div class="card">
+            <div class="front">
+                <div class="decorative-border"></div>
+                <img src="https://www.svgrepo.com/show/309563/rose-flower.svg" class="rose-decoration rose-left">
+                <img src="https://www.svgrepo.com/show/309563/rose-flower.svg" class="rose-decoration rose-right">
+                <div class="front-content">
+                    <h1 class="front-title">Happy Birthday</h1>
+                    <div class="heart-btn" onclick="flipCard()">❤️</div>
+                    <p style="color: #e91e63; font-weight: 600;">Tap the heart to open your special message</p>
+                </div>
+            </div>
+
+            <div class="back">
+                <div class="message-content">
+                    <h2>Happy Birthday, Shagufta Sultana!</h2>
+                    <p>
+                        Shagufta, aap sirf ek naam nahi, balki ek misaal hain - ek intelligent MERN stack developer, ek visionary teacher, aur ek behtareen insaan.<br><br>
+                        Sirf 3 mahine pehle hum mile the, lekin aisa lagta hai jaise hamesha se ek strong bond raha ho. Har din aapka haal-chaal poochhna meri aadat ban chuki hai, kyunki aap sirf ek dost nahi, balki ek inspiration bhi hain.<br><br>
+                        Aap sirf khud kamyabi ki bulandiyon tak nahi ja rahi hain, balki apni students ki bhi rahein roshan kar rahi hain. Aapka dedication, aapki mehnat aur aapka dil sabko aage badhne ka hosla deta hai.<br><br>
+                        Mujhe aap par hamesha fakhar rahega, aur mujhe poora yakeen hai ki ek din aap apni honhaar developer team ke saath industry me ek naya mukaam banayengi, InshaAllah!<br><br>
+                        Aapki zindagi hamesha khushiyon se bhari rahe, naye mauqe milte rahein, aur jo bhi sapne aap dekhti hain, wo sab poore hon! Allah aapko hamesha sehatmand, kamyab aur khush rakhe.<br><br>
+                        Once again, Happy Birthday , Shagufta! 🎂💖
+                    </p>
+                </div>
+                <div class="heart-btn" onclick="flipCard()" style="color: black; font-size: 30px; position: absolute; bottom: 20px; left: 20px; animation: float 2s ease-in-out infinite;">
+                    🖤
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function flipCard() {
+            document.querySelector('.card').classList.toggle('flipped');
+        }
+
+        // Add subtle floating animation to front title
+        const title = document.querySelector('.front-title');
+        title.style.animation = 'float 3s ease-in-out infinite';
+    </script>
+</body>
+</html>
